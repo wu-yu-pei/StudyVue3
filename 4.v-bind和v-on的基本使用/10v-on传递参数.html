@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <button @click='btnClick'>点我</button>
+            <!-- 如果有参数需要传递,且需要事件对象,需要用$event 来获取事件对象 -->
+            <button @click='btnClick2($event,"wyp",20)'>点我穿参数</button>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    
+                }
+            },
+            methods: {
+                // 默认会有一个事件对象
+                btnClick(event) {
+                    console.log('btnClick',event);
+                },
+                btnClick2(event,name,age) {
+                    console.log(event,name,age);
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

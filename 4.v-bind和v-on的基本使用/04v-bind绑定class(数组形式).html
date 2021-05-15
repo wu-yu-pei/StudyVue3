@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err {
+            color: red;
+        }
+        .bg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <div :class="[{err:true},{bg:isbg}]">错误</div>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    // 不会找到这个bg
+                    bg:'1010',
+                    
+                    isbg:true
+                }
+            },
+            methods: {
+                
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

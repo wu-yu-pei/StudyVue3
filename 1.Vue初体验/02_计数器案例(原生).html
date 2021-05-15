@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="count">0</h1>
+    <button class="increntment">+1</button>
+    <button class="decrentment">-1</button>
+    <script>
+        var count = document.querySelector('.count')
+        var increntment = document.querySelector('.increntment')
+        var decrentment = document.querySelector('.decrentment')
+        var num = 0
+        increntment.addEventListener('click',() => {
+            num+=1
+            count.innerHTML = num
+        })
+        decrentment.addEventListener('click',() => {
+            num-=1
+            count.innerHTML = num
+        })
+    </script>
+</body>
+</html>

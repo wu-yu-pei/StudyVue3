@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err {
+            width: 200px;
+            height: 100px;
+            color: red;
+        }
+        .errbg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <!-- 类名可加引号，也可不加引号 -->
+            <div :class="{err:true,errbg:true}">错误</div>
+
+            <div :class="{'err':true,errbg:isbg}">错误</div>
+            <button @click='tag'>点击</button>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    isbg:true
+                }
+            },
+            methods: {
+                tag() {
+                    this.isbg = !this.isbg
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <!-- 监听一个事件 -->
+            <button v-on:click="btnClick">点击</button>
+            <div v-on:mousemove="move" class="err"></div>
+            <div v-on:mouseleave="leave" class="err"></div>
+            <!-- 一个元素监听多个事件 利用对象的形式 -->
+            <div v-on="{click:divClick,mousemove:move,mouseleave:leave}" class="err"></div>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    
+                }
+            },
+            methods: {
+                btnClick() {
+                    console.log('btnClick');
+                },
+                move() {
+                    console.log('鼠标移入');
+                },
+                leave () {
+                    console.log('鼠标移出');
+                },
+                divClick () {
+                    console.log('divClick');
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>

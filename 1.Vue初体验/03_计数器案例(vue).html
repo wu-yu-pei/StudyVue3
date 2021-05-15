@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <script src="../vue3.js"></script>
+
+    <script>
+        Vue.createApp({
+            template:`
+            <h1>{{count}}</h1>
+            <button @click="increntment">+1</button>
+            <button @click="decrentment">-1</button>
+            `,
+            
+            // 在vue3中data必须是一个函数
+            data:function() {
+                return {
+                    count:0
+                }
+            },
+
+            methods: {
+                // 在对象里我们一般这样写方法  但是可以简写成下面形式
+                // increntment:function() {
+
+                // },
+                increntment() {
+                    this.count++
+                    console.log(this);
+                },
+                // decrentment(){
+                //     this.count--
+                // },
+                // 注意: 在methods中不可以使用箭头函数 以为 methoud中的函数 Vue给我们做了绑定只想proxy对象(一个代理对象  因此我们才可以通过this.data里的属性  获取data里面的值)     由于箭头函数没有自己的作用域在methods中使用箭头函数 this执行window
+                decrentment: () => {
+                    console.log(this.Vue);
+                }   
+            },
+        }).mount('#app')
+    </script>
+</body>
+</html>

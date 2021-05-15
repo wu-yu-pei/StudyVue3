@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+          <img src="https://v3.cn.vuejs.org/logo.png" alt="">
+          <a href="http://www.baidu.com">百度一下</a>
+
+          <!-- v-bind的使用 -->
+          <img v-bind:src="imgUrl" alt="">
+          <a v-bind:href="href">百度一下</a>
+
+          <!-- v-bind的缩写 -->
+          <img :src="imgUrl" alt="">
+          <a :href="href">百度一下</a>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    imgUrl:'https://v3.cn.vuejs.org/logo.png',
+                    href:'http://www.baidu.com'
+                }
+            },
+            methods: {
+                
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>
