@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <!-- .number 修饰符 -->
+            <input type="text" name="" id="" v-model.number='message'>
+            <h1>{{message}}</h1>
+            <button @click='show'>查看类型</button>
+            <!-- .trim修饰符  去除两边空格-->
+            <input type="text" name="" id="" v-model='info'>
+            <h1>{{info}}</h1>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    message:'哈哈' ,
+                    info:'231321' 
+                }
+            },
+            methods: {
+                show() {
+                    console.log(typeof this.message);
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>
