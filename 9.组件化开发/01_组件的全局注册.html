@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+
+    <template id="te">
+        <div>
+            <h1>哈哈啊哈</h1>
+            <zujian></zujian>
+        </div>
+    </template>
+
+    <template id='zujian'>
+        <div>
+            <h2>我是一个组件</h2>
+        </div>
+    </template>
+
+    <script src="../vue3.js"></script>
+    <script>
+        var App = {
+            template:'#te',
+            data:function() {
+                return {
+                    
+                }
+            },
+            methods: {
+                
+            },
+            component:{
+                
+            }
+        }
+        const app = Vue.createApp(App)
+
+        app.component('zujian',{
+            template:'#zujian'
+        })
+        
+        app.mount('#app')
+    </script>
+</body>
+</html>
