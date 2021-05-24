@@ -109,20 +109,20 @@
 // var mysql = new Mysql()
 // mysql.add(p)
 
-class Person {
-    firstName:String|undefined;
-    lastName:String|undefined
-}
+// class Person {
+//     firstName:String|undefined;
+//     lastName:String|undefined
+// }
 
-class Mysql<T> {
-    add(person:T):boolean {
-        console.log(person);
-        return true
-    }
-}
+// class Mysql<T> {
+//     add(person:T):boolean {
+//         console.log(person);
+//         return true
+//     }
+// }
 
-var p = new Person
-p.firstName = '吴'
-p.lastName = '配'
-var mysql = new Mysql<Person>()
-mysql.add(p)
+// var p = new Person
+// p.firstName = '吴'
+// p.lastName = '配'
+// var mysql = new Mysql<Person>()
+// mysql.add(p)
