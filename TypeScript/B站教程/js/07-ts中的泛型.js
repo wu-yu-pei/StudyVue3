@@ -93,22 +93,18 @@
 // p.lastName = '配'
 // var mysql = new Mysql()
 // mysql.add(p)
-var Person = /** @class */ (function () {
-    function Person() {
-    }
-    return Person;
-}());
-var Mysql = /** @class */ (function () {
-    function Mysql() {
-    }
-    Mysql.prototype.add = function (person) {
-        console.log(person);
-        return true;
-    };
-    return Mysql;
-}());
-var p = new Person;
-p.firstName = '吴';
-p.lastName = '配';
-var mysql = new Mysql();
-mysql.add(p);
+// class Person {
+//     firstName:String|undefined;
+//     lastName:String|undefined
+// }
+// class Mysql<T> {
+//     add(person:T):boolean {
+//         console.log(person);
+//         return true
+//     }
+// }
+// var p = new Person
+// p.firstName = '吴'
+// p.lastName = '配'
+// var mysql = new Mysql<Person>()
+// mysql.add(p)
