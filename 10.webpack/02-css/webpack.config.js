@@ -39,7 +39,7 @@ module.exports = {
                     "css-loader",
                     "less-loader"
                 ]
-            },
+            }
         ]
     }
 }
